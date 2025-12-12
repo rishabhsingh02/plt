@@ -1,0 +1,35 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+a=28
+plt.rcParams['font.size'] = a
+plt.rcParams['mathtext.default'] = 'regular'
+plt.rcParams['font.family'] = 'DejaVu Serif'
+
+x = np.linspace(0,6.28,100)
+y = np.sin(x)
+z = np.cos(x)
+plt.figure(figsize=(14, 8))
+
+plt.plot(x, y, label='sin(x)', color='blue', linestyle='--', linewidth=2, marker='o', markersize=4, markevery=5)
+plt.plot(x, z, label='cos(x)', color='red', linestyle='--', linewidth=2, marker='o', markersize=4, markevery=5)
+
+plt.title('plot', fontsize=a)
+plt.xlabel('x',fontsize=a)
+plt.ylabel('sin (x)',fontsize=a)
+
+plt.xlim(0,6.28)
+plt.ylim(-1.01,1.01)
+
+plt.xticks(np.arange(0, 6.29, 1.57)) 
+plt.yticks(np.arange(-1, 1.1, 0.5))  
+plt.tick_params(axis='both', labelsize=a, pad=10)
+
+plt.legend(fontsize=a, frameon=False, loc='upper center')
+plt.grid()
+plt.tight_layout()
+
+plt.savefig("hi.jpg", format="jpg", dpi=300)
+
+plt.show()
+
